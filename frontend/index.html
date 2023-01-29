@@ -1,9 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank Space</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid bg-white" id="nav-container">
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#" id="home-icon"><i class="fa-solid fa-calendar-days"></i></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link" href="#">About</a>
+                </div>
+              </div>
+              <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" 
+                        id="navbar-usericon"><i class="fa-solid fa-user"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="navbar-username"></a>
+                    </li>
+                </ul>
+              </div>
+            </div>
+        </nav> -->
+        <custom-navbar></custom-navbar>
+    </div>
+    <div class="container align-center shadow">
+      <h1>Welcome to Blank_Space!</h1>
+      <h5 class="text-white-50">Login to get started</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Duis in orci ut orci dignissim scelerisque. In ultrices orci id risus iaculis, sed sagittis est dictum. Etiam ex massa, porta quis risus maximus, suscipit tempor mi.</p>
+      <a href="https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&client_id=1048078394314-875q9d9snbi572d69g1uuvuajqhkam9t.apps.googleusercontent.com&prompt=consent&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fauth%2Fgoogle&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email"
+       type="button" class="btn btn-primary mt-5" id="google-login-btn">
+        <span id="google-icon">
+          <i class="fa-brands fa-google"></i>
+        </span>
+          Login with Google</a>
+    </div>
+<script src="https://kit.fontawesome.com/4f0f6674b3.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js"></script>
-<script>
-    async function fetchUser(){
-        const response = await axios.get('http://localhost:5000/api/auth/whoami', {withCredentials: true});
-        console.log(response.data.id)
-    }
-
-    fetchUser()
-</script>
+<script src="js/const.js"></script>
+<script src="js/auth.js"></script>
+<script src="./components/navbar.js"></script>
+</body>
+</html>

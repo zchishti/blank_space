@@ -1,0 +1,28 @@
+body{
+    font-family: 'Roboto Mono', monospace;
+    /* background-color: #c7ecee; */
+    background-image: url(../images/blue-bg.jpg);
+}
+
+#home-icon{
+    font-size: 3rem;
+}
+
+.align-center{
+  margin: auto;
+  width: 50%;
+  padding: 2rem;
+  background-color: #f0932b;
+  border-radius: 1rem;
+  margin-top: 3rem;
+  color: #ffffff;
+}
+
+#google-login-btn{
+    background-color: #e15f41;
+    border: #e15f41;
+}
+#google-icon{
+    margin-right: .5rem;
+    border-right: 1px solid white;
+}

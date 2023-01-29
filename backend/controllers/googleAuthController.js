@@ -1,7 +1,7 @@
 import asyncHandler from 'express-async-handler';
 import queryString from 'query-string';
 import dotenv from 'dotenv';
-// import User from '../models/userModel.js';
+import User from '../models/userModel.js';
 import generateToken from '../utils/generateToken.js';
 import getTokens from '../utils/authTokens.js';
 import axios from 'axios';
@@ -73,12 +73,36 @@ const getCurrentUser = asyncHandler(async (req,res) => {
   console.log("get me");
   try {
     const decoded = jwt.verify(req.cookies[process.env.COOKIE_NAME], process.env.JWT_SECRET);
-    console.log("decoded", decoded);
+    console.log(decoded)
+    setUser(decoded)
     return res.send(decoded);
   } catch (err) {
     console.log(err);
     res.send(null);
   }
+});
+
+const setUser = asyncHandler(async (decoded) => {
+  const {id, email, name, given_name, family_name, picture} = decoded.id;
+  const userExist = await User.findOne({ email });
+
+  if (userExist){
+    return;
+  }
+
+  const user = await User.create({
+    vendor_id : id,
+    name: name,
+    email: email,
+    image: picture
+  });
+
+  if (user){
+    console.log('New user created')
+  }else{
+    console.log('Error creating user')
+  }
+  return;
 });
 
 export {
