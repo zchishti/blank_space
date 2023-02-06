@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './config/db.js';
 import googleAuthRoutes from './routes/googleAuth.js';
+import eventRoutes from './routes/event.js'
 import cookieParser from "cookie-parser";
 
 dotenv.config()
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/auth',googleAuthRoutes);
+app.use('/api/event', eventRoutes);
 
 connectDB();
 

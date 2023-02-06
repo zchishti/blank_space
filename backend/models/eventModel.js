@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const TimeSlotSchema = mongoose.Schema({
+const SlotSchema = mongoose.Schema({
     startTime : {
         type: Date,
         required: true
@@ -9,6 +9,14 @@ const TimeSlotSchema = mongoose.Schema({
         type: Date,
         required: true
     }
+})
+
+const TimeSlotSchema = mongoose.Schema({
+    date: {
+        type: Date,
+        required: true
+    },
+    Slots: [SlotSchema]
 })
 
 const MatchSchema = mongoose.Schema({
@@ -37,6 +45,10 @@ const EventSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    description:{
+        type: String,
+        required: false
+    },
     date:{
         type: Date,
         required: true,
@@ -49,8 +61,8 @@ const EventSchema = mongoose.Schema({
 });
 
 const Event = mongoose.model('Event', EventSchema);
-const Match = mongoose.model('Match', MatchSchema);
-const TimeSlot = mongoose.model('TimeSlot', TimeSlotSchema) 
+// const Match = mongoose.model('Match', MatchSchema);
+// const TimeSlot = mongoose.model('TimeSlot', TimeSlotSchema) 
 
-export default {Event, Match, TimeSlot} 
+export default Event//, Match, TimeSlot} 
 

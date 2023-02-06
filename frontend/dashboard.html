@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/css/datepicker-bs5.min.css">
     <link href="styles/main.css" rel="stylesheet">
 </head>
 <body>
@@ -17,12 +19,26 @@
     </div>
     <div class="container align-center shadow">
         <h1>Dashboard</h1>
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-success btn-sm float-right">Create New Event</button>
+            </div>
+            <div class="col-sm-12">
+                <new-event-form ></new-event-form>
+            </div>
+        </div>
     </div>
 
 <script src="https://kit.fontawesome.com/4f0f6674b3.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/datepicker.min.js"></script>
+<script src="https://momentjs.com/downloads/moment.js"></script>
 <script src="js/const.js"></script>
 <script src="js/auth.js"></script>
 <script src="./components/navbar.js"></script>
+<script src="./components/newEventForm.js"></script>
 </body>
 </html>
